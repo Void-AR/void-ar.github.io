@@ -1,54 +1,216 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>VoidAR太虚AR引擎，支持Unity4.x,5.x</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="成都米有网络科技有限公司自主研发集成于Unity3d实现增强现实的SDK开发包，虚拟现实SDK太虚官方网站。" />
-	<meta name="keywords" content="虚拟现实,AR,VoidAR,太虚,太虚SDK,ARSDK,虚拟现实SDK，Unity AR,太虚AR,国内ARSDK,自研SDK,AR引擎,AR开发,AR技术,增强现实AR,增强现实引擎,免费增强现实引擎,免费AR SDK,免费AR引擎" />
-	<meta name="baidu-site-verification" content="ZIFoqXjB47" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">VoidAR太虚AR</h1>
-      <h2 class="project-tagline">VoidAR最新版本0.03</h2>
-	  <a href="https://github.com/ionhammer/voidAR" class="btn">View on GitHub</a>
-      <a href="https://github.com/ionhammer/voidAR/zipball/master" class="btn">Download .zip</a>
-      <a href="http://pan.baidu.com/s/1jGCkPhG" class="btn">百度云网盘</a>
-	  <a href="https://ionhammer.gitbooks.io/voidar/content/" class="btn">帮助文档</a>
-    </section>
+<html>
+<head>
+<title>VoidAR太虚AR引擎</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="成都米有网络科技有限公司自主研发集成于Unity3d实现增强现实的SDK开发包，虚拟现实SDK太虚官方网站。">
+<meta name="keywords" content="虚拟现实,AR,VoidAR,太虚,太虚SDK,ARSDK,虚拟现实SDK，Unity AR,太虚AR,国内ARSDK,自研SDK,AR引擎,AR开发,AR技术,增强现实AR,增强现实引擎,免费增强现实引擎,免费AR SDK,免费AR引擎">
+<meta name="baidu-site-verification" content="ZIFoqXjB47">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-    <section class="main-content">
-	<p>当前版本ver0.03支持多目标识别</p>
-	<p>ver0.02支持ImageTarget</p>
-	<p>ver0.01支持手绘识别</p>
-	<p>ver0.01版本演示视频</p>
-    <div><embed src="http://player.youku.com/player.php/sid/XMTMzMzM5Nzc4MA==/v.swf" allowFullScreen="true" quality="high" width="800" height="600" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></div>
-	 <p>官方技术交流  QQ群：277574712    邮件：<a href="mailto:ar@ionhammer.cn">ar@ionhammer.cn</a>   </p>
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2062448"></script>
-<!-- UY END -->
-<!-- 合作伙伴 -->
-<section class="main-content">
-	<div class="middle-newaction-title">合作伙伴</div>
-</section>
-<section class="main-content">
-	<ul>
-		<li><a href="http://www.arvrschool.com/" target="_blank"><img src="img/ARvideo_Green.jpg" /></a></li>
-	</ul>
-</section>
-      <footer class="site-footer">
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+<!---End-smoth-scrolling---->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="logo"></div>
+      <img src="images/logo2.jpg" width="89" height="39" alt=""/>
+      <div class="top-menu"> <span class="menu"> </span>
+        <ul>
+          <li><a href="https://github.com/ionhammer/voidAR" target="_blank" class="scroll">GitHub上查看</a></li>
+          <li><a href="https://github.com/ionhammer/voidAR/zipball/master"  target="_blank" class="scroll">下载SDK</a></li>
+          <li><a href="http://pan.baidu.com/s/1jGCkPhG"  target="_blank">百度云盘下载</a></li>
+          <li><a href="https://ionhammer.gitbooks.io/voidar/content/"  target="_blank">帮助文档</a></li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
+      <!-- script-for-menu -->
+      <script>					
+					$("span.menu").click(function(){
+						$(".top-menu ul").slideToggle("slow" , function(){
+						});
+					});
+		 </script>
+      <!-- script-for-menu -->
+    </div>
+  </div>
+</div>
+<div class="banner">
+  <div class="container">
+    <div class="banner-grids">
+      <div class="col-md-6 left-grid">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="628" height="350" id="FLVPlayer">
+          <param name="movie" value="FLVPlayer_Progressive.swf" />
+          <param name="quality" value="high">
+          <param name="wmode" value="opaque">
+          <param name="scale" value="noscale">
+          <param name="salign" value="lt">
+          <param name="FlashVars" value="&amp;MM_ComponentVersion=1&amp;skinName=Corona_Skin_2&amp;streamName=voidar&amp;autoPlay=true&amp;autoRewind=false" />
+          <param name="swfversion" value="8,0,0,0">
+          <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+          <param name="expressinstall" value="Scripts/expressInstall.swf">
+          <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+          <!--[if !IE]>-->
+          <object type="application/x-shockwave-flash" data="FLVPlayer_Progressive.swf" width="628" height="350">
+            <!--<![endif]-->
+            <param name="quality" value="high">
+            <param name="wmode" value="opaque">
+            <param name="scale" value="noscale">
+            <param name="salign" value="lt">
+            <param name="FlashVars" value="&amp;MM_ComponentVersion=1&amp;skinName=Corona_Skin_2&amp;streamName=voidar&amp;autoPlay=true&amp;autoRewind=false" />
+            <param name="swfversion" value="8,0,0,0">
+            <param name="expressinstall" value="Scripts/expressInstall.swf">
+            <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+            <div>
+              <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+              <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" /></a></p>
+            </div>
+            <!--[if !IE]>-->
+          </object>
+          <!--<![endif]-->
+        </object>
+      </div>
+      <div class="col-md-6 right-grid slider">
+        <div class="callbacks_container">
+          <ul class="rslides" id="slider">
+            <li>
+              <h1>太虚引擎 Void AR</h1>
+              <p>V0.01支持手绘识别<br>
+                V0.02支持ImageTarget<br>
+                V0.03支持多目标识别</p>
+              <a href="https://ionhammer.gitbooks.io/voidar/content/version.html" class="button  hvr-shutter-in-horizontal">版本日志</a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+</div>
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+<div class="content">
+  <div class="service-section" id="services">
+    <div class="container">
+      <h3> 太虚AR介绍</h3>
+      <div class="service-grids">
+        <div class="col-md-4 service-grid"> <img src="images/icon001.png">
+          <h4>功能特点</h4>
+          <p>手绘识别&nbsp&nbsp 模糊识别<br>
+            强稳定性&nbsp&nbsp 空间构建<br>
+            多目标识别</p>
+          <a href="https://ionhammer.gitbooks.io/voidar/content/index.html" class="button hvr-shutter-in-horizontal">查看详细</a> </div>
+        <div class="col-md-4 service-grid"> <img src="images/icon002.png">
+          <h4>开发环境</h4>
+          <p>Mac、Win7以上系统，32位、64位均可<br>
+            32位unity 3D（暂不支持64位）<br>
+            unity3D 4.x，5.x均可 </p>
+          <a href="https://ionhammer.gitbooks.io/voidar/content/before%20start.html" class="button hvr-shutter-in-horizontal">查看详细</a> </div>
+        <div class="col-md-4 service-grid"> <img src="images/icon003.png">
+          <h4>支持平台</h4>
+          <p>iOS：支持<br>
+            PC：支持<br>
+            Android：后续版本支持</p>
+          <a href="https://ionhammer.gitbooks.io/voidar/content/ban_ben_ri_zhi.html" class="button hvr-shutter-in-horizontal">查看详细</a> </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class="about-section" id="about" >
+    <div class="container">
+      <h3>联系我们</h3>
+      <div class="about-grids">
+	  <div class="col-md-6 right-about" style="padding-left:200px">
+          <div class="google-map">
+            <div class="about-grid1">
+              <h4>微信扫描</h4>
+              <br>
+            </div>
+          </div>
+          <div class="contact">
+            <form>
+              <div class="contact1">
+              <img src="images/wechat.jpg" width="150" height="151" alt=""/>
+            </form>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+      </div>
+        <div class="col-md-6 left-about">
+          <div class="about-grid1">
+            <h4>联系方式</h4>
+            <section id="skills">
+              <progress value="90" max="100"> </progress>
+              <span>官方技术交流QQ群：277574712</span>
+              <progress value="95" max="100"> </progress>
+              <span>邮箱：ar@ionhammer.cn</span>
+              <progress value="85" max="100"> </progress>
+              <span>微信：voidar</span> </section>
+          </div>
+        </div>
+        
+      <div class="clearfix"></div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+	  <!-- UY BEGIN -->
+	<div id="uyan_frame"></div>
+	<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2062448"></script>
+	<!-- UY END -->
+  </div>
 
-        <span class="site-footer-credits">VoiaAR 2015</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
+</div>
+<div class="footer-section">
+  <div class="container">
+    <div class="footer-top">
+      <p>Copyright &copy; 2015. VoidAR</p>
+    </div>
+    <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a> </div>
+</div>
+<script type="text/javascript">
+swfobject.registerObject("FLVPlayer");
+                </script>
+</body>
 </html>
