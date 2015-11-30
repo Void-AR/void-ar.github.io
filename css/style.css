@@ -67,7 +67,7 @@ body{
 	margin-top: 4.5em;
 }
 .right-grid {
-   margin-top: 10em;
+   margin-top: 6em;
 }
 .slider {
 	position: relative;
@@ -78,7 +78,7 @@ body{
   list-style: none;
   overflow: hidden;
   width: 100%;
-  padding: 0 0 1em 6em;
+  padding: 0 0 1em 1em;
   margin: 0;
   }
 .rslides h1{
@@ -90,11 +90,11 @@ body{
  }
 .rslides p{
   color: #000;
-  font-size: 1.4em;
-  line-height: 1.5em;
-  margin-bottom: 2em;
+  font-size: 1.3em;
+  line-height: 1.6em;
+  margin-bottom: 4em;
   font-weight: 400;
-  padding-left:120px;
+  padding-left:90px;
   text-align:left;
 }
 .rslides li {

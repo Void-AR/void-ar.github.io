@@ -36,6 +36,15 @@
         pager: true,
       });
     });
+	
+	function playVideo(videoURL,title){
+		if(videoURL != ""){
+			$("#videoPlay").attr("src",videoURL);
+			$("#videoTitle").text(title);
+		}else{
+			alert(title+"即将到来！");
+		}
+	}
   </script>
 </head>
 <body>
@@ -68,46 +77,18 @@
   <div class="container">
     <div class="banner-grids">
       <div class="col-md-6 left-grid">
-        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="628" height="350" id="FLVPlayer">
-          <param name="movie" value="FLVPlayer_Progressive.swf" />
-          <param name="quality" value="high">
-          <param name="wmode" value="opaque">
-          <param name="scale" value="noscale">
-          <param name="salign" value="lt">
-          <param name="FlashVars" value="&amp;MM_ComponentVersion=1&amp;skinName=Corona_Skin_2&amp;streamName=voidar&amp;autoPlay=true&amp;autoRewind=false" />
-          <param name="swfversion" value="8,0,0,0">
-          <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
-          <param name="expressinstall" value="Scripts/expressInstall.swf">
-          <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
-          <!--[if !IE]>-->
-          <object type="application/x-shockwave-flash" data="FLVPlayer_Progressive.swf" width="628" height="350">
-            <!--<![endif]-->
-            <param name="quality" value="high">
-            <param name="wmode" value="opaque">
-            <param name="scale" value="noscale">
-            <param name="salign" value="lt">
-            <param name="FlashVars" value="&amp;MM_ComponentVersion=1&amp;skinName=Corona_Skin_2&amp;streamName=voidar&amp;autoPlay=true&amp;autoRewind=false" />
-            <param name="swfversion" value="8,0,0,0">
-            <param name="expressinstall" value="Scripts/expressInstall.swf">
-            <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
-            <div>
-              <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
-              <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" /></a></p>
-            </div>
-            <!--[if !IE]>-->
-          </object>
-          <!--<![endif]-->
-        </object>
+        <iframe id="videoPlay" height="350" width="628" src="http://player.youku.com/embed/XMTMzMzM5Nzc4MA==" frameborder="0" allowfullscreen="true"></iframe>
+		<div id="videoTitle" style="width:100%;margin:5px;font-size: 1.2em;text-align: center;font-weight: bold;">手绘识别显示视频</div>
       </div>
       <div class="col-md-6 right-grid slider">
         <div class="callbacks_container">
           <ul class="rslides" id="slider">
             <li>
               <h1>太虚引擎 Void AR</h1>
-              <p>V0.01支持手绘识别<br>
-                V0.02支持ImageTarget<br>
-                V0.03支持多目标识别<br>
-				V0.04新增64位的支持,增强跟踪稳定性
+              <p>◆ V0.01支持手绘识别 <a href="javascript:playVideo('http://player.youku.com/embed/XMTMzMzM5Nzc4MA==','V0.01演示视频')">[演示视频]</a><br>
+                ◆ V0.02支持ImageTarget <a href="javascript:playVideo('','V0.02演示视频')">[演示视频]</a><br>
+                ◆ V0.03支持多目标识别 <a href="javascript:playVideo('','V0.02演示视频')">[演示视频]</a><br>
+				◆ V0.04新增64位的支持,增强跟踪稳定性 <a href="javascript:playVideo('http://player.youku.com/embed/XMTM5NDgzOTYzNg==','V0.04演示视频')">[演示视频]</a>  <a href="javascript:playVideo('','V0.04教程视频')">[教程视频]</a>
 				</p>
               <a href="https://ionhammer.gitbooks.io/voidar/content/version.html" class="button  hvr-shutter-in-horizontal">版本日志</a> </li>
           </ul>
