@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>cube 3D</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/three.min.js"></script>
+		<script>
+			var container;
+			var camera, scene, renderer,light,cube;
+			init();
+			function init() {
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.z = 3;
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+				scene = new THREE.Scene();
+				light = new THREE.AmbientLight(0xffffff);
+        		scene.add(light);  
+
+        		 var geometry = new THREE.CubeGeometry(1, 1, 1);
+        		// 加载纹理贴图
+        		var texture = new THREE.TextureLoader().load("images/metal.jpg");
+        		var material = new THREE.MeshBasicMaterial({ map: texture });
+        		cube = new THREE.Mesh(geometry, material);
+        		scene.add(cube);
+
+        		render();
+			}
+
+			function  render() {
+				requestAnimationFrame( render );
+				renderer.render( scene, camera );
+			};
+			
+		</script>
+
+	</body>
+</html>
