@@ -56,9 +56,9 @@
 
 			function onDeviceOrientationChanged(eventData) {
 			    var deviceEuler = new THREE.Euler();
-				deviceEuler.x =  eventData.beta  / 180 * Math.PI;
-				deviceEuler.y =  eventData.gamma / 180 * Math.PI;
-				deviceEuler.z =  eventData.alpha / 180 * Math.PI;
+				deviceEuler.x =  eventData.rotationRate.beta  / 180 * Math.PI;
+				deviceEuler.y =  eventData.rotationRate.gamma / 180 * Math.PI;
+				deviceEuler.z =  eventData.rotationRate.alpha / 180 * Math.PI;
 				deviceEuler.order = "XZY";
 			
 				var controllerQuaternion = new THREE.Quaternion().setFromEuler(deviceEuler).inverse();	
