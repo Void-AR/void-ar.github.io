@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Web IMU</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<script>
+			init();
+			function init() {
+				console.log("init ");
+				window.addEventListener('devicemotion', function(e){
+					console.log("==========devicemotion "+e);
+					if(e!=null){
+						console.log("devicemotion acceleration ="+e.acceleration);
+						console.log("devicemotion accelerationIncludingGravity ="+e.accelerationIncludingGravity);
+						console.log("devicemotion rotationRate ="+e.rotationRate);
+						console.log("devicemotion interval ="+e.interval);
+					}
+				}); 
+				window.addEventListener('orientationchange', function(e){
+					console.log("orientationchange "+e);
+				});
+				window.addEventListener('deviceorientation', function(e){
+					console.log("deviceorientation "+e);
+				});
+			}
+			
+		</script>
+
+	</body>
+</html>
