@@ -26,7 +26,7 @@
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.z = 3;
 
-				controls = new THREE.DeviceOrientationControls( camera );
+				//controls = new THREE.DeviceOrientationControls( camera );
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -44,24 +44,26 @@
         		cube = new THREE.Mesh(geometry, material);
         		scene.add(cube);
 
-				window.addEventListener('devicemotion', function(e){
-					console.log("==========devicemotion "+e);
-					if(e!=null){
-						console.log("devicemotion acceleration xyz="+e.acceleration.x+","+e.acceleration.y+","+e.acceleration.z);
-						console.log("devicemotion accelerationIncludingGravity xyz="+e.accelerationIncludingGravity.x+","+e.accelerationIncludingGravity.y+","+e.accelerationIncludingGravity.z);
-						console.log("devicemotion rotationRate alpha="+e.rotationRate.alpha+", beta="+e.rotationRate.beta+", gamma"+e.rotationRate.gamma);
-						console.log("devicemotion interval ="+e.interval);
-						camera
-					}
-				}); 
+				window.addEventListener('devicemotion', onDeviceOrientationChanged); 
         		render();
 			}
 
 			function  render() {
 				requestAnimationFrame( render );
-				controls.update();
+				//controls.update();
 				renderer.render( scene, camera );
 			};
+
+			function onDeviceOrientationChanged(eventData) {
+			    var deviceEuler = new THREE.Euler();
+				deviceEuler.x =  event.beta  / 180 * Math.PI;
+				deviceEuler.y =  event.gamma / 180 * Math.PI;
+				deviceEuler.z =  event.alpha / 180 * Math.PI;
+				deviceEuler.order = "XZY";
+			
+				var controllerQuaternion = new THREE.Quaternion().setFromEuler(deviceEuler).inverse();	
+				cube.quaternion.copy(controllerQuaternion);
+			}
 			
 		</script>
 
