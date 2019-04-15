@@ -28,8 +28,8 @@
 						console.log("devicemotion accelerationIncludingGravity xyz="+e.accelerationIncludingGravity.x+","+e.accelerationIncludingGravity.y+","+e.accelerationIncludingGravity.z);
 						console.log("devicemotion rotationRate alpha="+e.rotationRate.alpha+", beta="+e.rotationRate.beta+", gamma"+e.rotationRate.gamma);
 						console.log("devicemotion interval ="+e.interval);*/
-						var str = "[accel]\n x:" + e.acceleration.x + "\n y:" + e.acceleration.y + "\n z:" + e.acceleration.z;
-            			str += "\n[gyro]\n x:" + e.rotationRate.alpha + "\n y:" + e.rotationRate.beta + "\n z:" + e.rotationRate.gamma;
+						var str = "[accel]<br> x:" + e.acceleration.x + "<br> y:" + e.acceleration.y + "<br> z:" + e.acceleration.z;
+            			str += "<br>[gyro]<br> x:" + e.rotationRate.alpha + "<br> y:" + e.rotationRate.beta + "<br> z:" + e.rotationRate.gamma;
             			//str += "\n[magnet]\n x:" + magnet.x + "\n y:" + magnet.y + "\n z:" + magnet.z;
 						document.getElementById("sinfo").innerHTML = str;
 					}
