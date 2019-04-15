@@ -24,9 +24,9 @@
 				window.addEventListener('devicemotion', function(e){
 					console.log("==========devicemotion "+e);
 					if(e!=null){
-						console.log("devicemotion acceleration ="+e.acceleration);
-						console.log("devicemotion accelerationIncludingGravity ="+e.accelerationIncludingGravity);
-						console.log("devicemotion rotationRate ="+e.rotationRate);
+						console.log("devicemotion acceleration xyz="+e.acceleration.x+","+e.acceleration.y+","+e.acceleration.z);
+						console.log("devicemotion accelerationIncludingGravity xyz="+e.accelerationIncludingGravity.x+","+e.accelerationIncludingGravity.y+","+e.accelerationIncludingGravity.z);
+						console.log("devicemotion rotationRate alpha="+e.rotationRate.alpha+", beta="+e.rotationRate.beta+", gamma"+e.rotationRate.gamma);
 						console.log("devicemotion interval ="+e.interval);
 					}
 				}); 
@@ -34,7 +34,7 @@
 					console.log("orientationchange "+e);
 				});
 				window.addEventListener('deviceorientation', function(e){
-					console.log("deviceorientation "+e);
+					console.log("deviceorientation alpha="+e.alpha+",beta="+e.beta+",gamma="+e.gamma);
 				});
 			}
 			
