@@ -22,7 +22,7 @@
 			function init() {
 				console.log("init ");
 				window.addEventListener('devicemotion', function(e){
-					console.log("==========devicemotion "+e);
+					//console.log("==========devicemotion "+e);
 					if(e!=null){
 						/*console.log("devicemotion acceleration xyz="+e.acceleration.x+","+e.acceleration.y+","+e.acceleration.z);
 						console.log("devicemotion accelerationIncludingGravity xyz="+e.accelerationIncludingGravity.x+","+e.accelerationIncludingGravity.y+","+e.accelerationIncludingGravity.z);
@@ -35,7 +35,7 @@
 					}
 				}); 
 
-				var sensor = new Magnetometer();
+				/*var sensor = new Magnetometer();
 				sensor.start();
 
 				sensor.onreading = () => {
@@ -45,12 +45,14 @@
 				};
 
 				sensor.onerror = event => console.log(event.error.name, event.error.message);
-				/*window.addEventListener('orientationchange', function(e){
+
+				*/
+				window.addEventListener('orientationchange', function(e){
 					console.log("orientationchange "+e);
 				});
 				window.addEventListener('deviceorientation', function(e){
 					console.log("deviceorientation alpha="+e.alpha+",beta="+e.beta+",gamma="+e.gamma);
-				});*/
+				});
 			}
 			
 		</script>
