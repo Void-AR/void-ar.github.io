@@ -44,7 +44,15 @@
         		cube = new THREE.Mesh(geometry, material);
         		scene.add(cube);
 
-				window.addEventListener('devicemotion', onDeviceOrientationChanged); 
+				//window.addEventListener('devicemotion', onDeviceOrientationChanged); 
+				//使用旋转矩阵更新网格旋转。
+				const sensorRel = new RelativeOrientationSensor();
+				let rotationMatrix = new Float32Array(16);
+				sensor_rel.onreading = () => {
+				    sensorRel.populateMatrix(rotationMatrix);
+				    cube.matrix.fromArray(rotationMatrix);
+				}
+				sensorRel.start();
         		render();
 			}
 
