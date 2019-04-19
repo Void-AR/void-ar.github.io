@@ -44,7 +44,8 @@
         		cube = new THREE.Mesh(geometry, material);
         		scene.add(cube);
 
-				window.addEventListener('devicemotion', onDeviceOrientationChanged); 
+				window.addEventListener('orientationchange', handleOrientationChange);
+    			window.addEventListener('deviceorientation', handleDeviceOrientation);
         		render();
 			}
 
@@ -54,30 +55,18 @@
 				renderer.render( scene, camera );
 			};
 
-			function onDeviceOrientationChanged(eventData) {
-			    /*var deviceEuler = new THREE.Euler();
-				deviceEuler.x =  eventData.rotationRate.beta  / 180 * Math.PI;
-				deviceEuler.y =  eventData.rotationRate.gamma / 180 * Math.PI;
-				deviceEuler.z =  eventData.rotationRate.alpha / 180 * Math.PI;
-				deviceEuler.order = "XZY";
-			
-				var controllerQuaternion = new THREE.Quaternion().setFromEuler(deviceEuler).inverse();	
-				cube.quaternion.copy(controllerQuaternion);*/
-
-				const zee = new Vector3(0, 0, 1);
-				const screenTransform = new Quaternion();
-				const worldTransform = new Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
-
-				const euler = new Euler();
-				// order = 'YXZ'
-				euler.order = 'YXZ';
-				euler.set(pitch, yaw, roll, order);
-
-				camera.quaternion.setFromEuler(euler);
-				camera.quaternion.multiply(worldTransform);
-				camera.quaternion.multiply(screenTransform.setFromAxisAngle(zee, -orientation));
+			function handleOrientationChange(){
+				console.log("window.orientation="+window.orientation);
+				
 			}
 			
+			function handleDeviceOrientation(eventData) {
+				
+				var alpha = eventData.alpha / 180 * Math.PI;
+				var beta = eventData.beta / 180 * Math.PI;
+				var gamma= eventData.gamma / 180 * Math.PI;
+				console.log("handleDeviceOrientation="+eventData+" alpha="+alpha+" beta="+beta+" gamma="+gamma);
+			}
 		</script>
 
 	</body>
