@@ -44,15 +44,7 @@
         		cube = new THREE.Mesh(geometry, material);
         		scene.add(cube);
 
-				//window.addEventListener('devicemotion', onDeviceOrientationChanged); 
-				//使用旋转矩阵更新网格旋转。
-				const sensorRel = new RelativeOrientationSensor();
-				let rotationMatrix = new Float32Array(16);
-				sensor_rel.onreading = () => {
-				    sensorRel.populateMatrix(rotationMatrix);
-				    cube.matrix.fromArray(rotationMatrix);
-				}
-				sensorRel.start();
+				window.addEventListener('devicemotion', onDeviceOrientationChanged); 
         		render();
 			}
 
@@ -63,14 +55,27 @@
 			};
 
 			function onDeviceOrientationChanged(eventData) {
-			    var deviceEuler = new THREE.Euler();
+			    /*var deviceEuler = new THREE.Euler();
 				deviceEuler.x =  eventData.rotationRate.beta  / 180 * Math.PI;
 				deviceEuler.y =  eventData.rotationRate.gamma / 180 * Math.PI;
 				deviceEuler.z =  eventData.rotationRate.alpha / 180 * Math.PI;
 				deviceEuler.order = "XZY";
 			
 				var controllerQuaternion = new THREE.Quaternion().setFromEuler(deviceEuler).inverse();	
-				cube.quaternion.copy(controllerQuaternion);
+				cube.quaternion.copy(controllerQuaternion);*/
+
+				const zee = new Vector3(0, 0, 1);
+				const screenTransform = new Quaternion();
+				const worldTransform = new Quaternion(-Math.sqrt(0.5), 0, 0, Math.sqrt(0.5));
+
+				const euler = new Euler();
+				// order = 'YXZ'
+				euler.order = 'YXZ';
+				euler.set(pitch, yaw, roll, order);
+
+				camera.quaternion.setFromEuler(euler);
+				camera.quaternion.multiply(worldTransform);
+				camera.quaternion.multiply(screenTransform.setFromAxisAngle(zee, -orientation));
 			}
 			
 		</script>
